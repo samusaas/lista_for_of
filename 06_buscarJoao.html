@@ -8,9 +8,14 @@
 
     //ENTRADA
     let listaDeNomes = ["João Pedro", "Gabriel José", "Ulisses Joao", "Pedro Henrique", "João da Silva", "João Henrique", "Alisson João"];
+    let listaFinal = [];
     //PROCESSAMENTO
-    let cJoao = listaDeNomes.filter(nome => nome.includes(`João`) || nome.includes(`Joao`)
-    );
+      for (let nome of listaDeNomes) {
+        if (nome.search(/João|Joao/) !== -1) { 
+            listaFinal.push(nome);
+        }
+    }
+
     //SAÍDA
-    document.write(`Nomes com "João" ou "joao": ${cJoao.sort().join(`, `)}`)
+    document.write(`Nomes com "João" ou "joao": ${listaFinal.sort().join(`, `)}`)
 </script>
